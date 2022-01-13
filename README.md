@@ -1,4 +1,4 @@
-# BattleBots
+```
 package jb;
 import robocode.*;
 import java.awt.Color;
@@ -58,3 +58,4 @@ public class BaddieBot extends Robot
 		ahead(10);
 	}	
 }
+```
