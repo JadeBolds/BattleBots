@@ -16,6 +16,9 @@ public class BaddieBot extends Robot
 	public void run() {
 		// Initialization of the robot should be put here
 
+		// After trying out your robot, try uncommenting the import at the top,
+		// and the next line:
+
 		 setColors(Color.red,Color.blue,Color.red); // body,gun,radar
 
 		// Robot main loop
@@ -37,6 +40,9 @@ public class BaddieBot extends Robot
 	   	fire(2);
 		back(10);
 		fire(2);
+		turnLeft(60);
+		ahead(10);
+		
 	}
 	/**
 	 * onHitByBullet: What to do when you're hit by a bullet
