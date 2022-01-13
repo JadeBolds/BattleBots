@@ -1,5 +1,7 @@
 ```
 package jb;
+import robocode.HitRobotEvent;
+import robocode.ScannedRobotEvent;
 import robocode.*;
 import java.awt.Color;
 
@@ -24,10 +26,10 @@ public class BaddieBot extends Robot
 		// Robot main loop
 		while(true) {
 			// Replace the next 4 lines with any behavior you would like
-			fire(1);
 			ahead(200);
-			turnGunRight(40);
-			back(80);
+			fire(1);
+			turnLeft(80);
+			fire(2);
 		}
 	}
 
@@ -36,22 +38,30 @@ public class BaddieBot extends Robot
 	 */
 	public void onScannedRobot(ScannedRobotEvent e) {
 		// Replace the next line with any behavior you would like
-
-	   	fire(2);
-		back(10);
+		if (!e.isSentryRobot()) {
+            fire(3);
+			back(4);
+			fire(1);
+        }else{
+		turnLeft(120);
 		fire(2);
-		turnLeft(60);
-		ahead(10);
-		
+		back(40);
+		}
+	}
+	
+	public void HitRobotEvent(){
+		fire(2);
+		turnRight(40);
 	}
 	/**
 	 * onHitByBullet: What to do when you're hit by a bullet
 	 */
 	public void onHitByBullet(HitByBulletEvent e) {
 		// Replace the next line with any behavior you would like
-		fire(1);
+		fire(2);
 		turnLeft(-60);
 		ahead(10);
+		fire(2);
 	}
 	
 	/**
@@ -61,7 +71,6 @@ public class BaddieBot extends Robot
 		// Replace the next line with any behavior you would like
 		back(20);
 		turnLeft(180);
-		ahead(10);
-	}	
-}
+		ahead(40);
+	}
 ```
